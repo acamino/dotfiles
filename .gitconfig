@@ -15,6 +15,10 @@
   aa = add --all
   pullff = pull --ff-only
 
+  # Custom logging
+  l = "!. ~/.githelpers && pretty_git_log"
+  lg = "!. ~/.githelpers && pretty_git_log" -15
+
 [merge]
   tool = vimdiff
 
