@@ -16,7 +16,7 @@ function pretty_git_log() {
   readonly SUBJECT="%s"
 
   readonly FORMAT="$COMMIT_HASH}$RELATIVE_TIME}$AUTHOR}$REFS $SUBJECT"
-  git log --graph --pretty="tformat:${FORMAT}" $* |
+  git log --pretty="tformat:${FORMAT}" $* |
       # Replace (2 years ago) with (2 years)
       sed -Ee 's/(^[^<]*) ago\)/\1)/' |
       # Replace (2 years, 5 months) with (2 years)
