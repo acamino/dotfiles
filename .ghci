@@ -1,1 +1,4 @@
 :set prompt "\ESC[34mλ \ESC[m"
+escapedArg arg = "'" ++ concatMap (\c -> if c == '\'' then "'\"'\"'" else [c])  arg  ++ "'"
+:def! search return . (":! hoogle --color " ++) . escapedArg
+:def! doc return . (":! hoogle --info " ++) . escapedArg
